@@ -2,10 +2,16 @@ const dotenv = require("dotenv");
 dotenv.config();
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 const studentRoutes = require("./routes/studentRoutes");
 
 
 const app = express();
+app.use(cors({
+    origin: "https://profkgfrontend.onrender.com",  // allow your frontend
+    methods: ["GET", "POST", "PUT", "DELETE"],      // allowed methods
+    credentials: true                               // if using cookies/auth
+  }));
 app.use(express.json());
 console.log("Mongo URI:", process.env.MONGO_URI);
 mongoose.connect(process.env.MONGO_URI, {
