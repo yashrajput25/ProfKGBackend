@@ -26,6 +26,8 @@ mongoose.connect(process.env.MONGO_URI, {
 const knowledgeGraphRoutes = require('./routes/knowledgeGraph');
 app.use('/api/knowledgeGraph', knowledgeGraphRoutes);
 app.use('/api/students', studentRoutes );
-
+app.get("/", (req, res) => {
+    res.send("🚀 Knowledge Graph Backend is running and connected!");
+  });
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, ()=> console.log(`🚀 Knowledge Graph Service running on port ${PORT}`));
