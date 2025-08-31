@@ -8,7 +8,7 @@ const studentRoutes = require("./routes/studentRoutes");
 
 const app = express();
 app.use(cors({
-    origin: ["https://profkgfrontend.onrender.com","https://profkgfrontend.netlify.app" ,"http://localhost:3000"], // allow your frontend
+    origin: ["https://profkgfrontend.onrender.com","https://profcognitrixkg.netlify.app" ,"http://localhost:3000"], // allow your frontend
     methods: ["GET", "POST", "PUT", "DELETE"],      // allowed methods
     credentials: true                               // if using cookies/auth
   }));
