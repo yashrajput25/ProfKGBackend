@@ -4,7 +4,7 @@ const Student = require("../models/studentSchema");
 
 router.get("/", async(req, res) => {
     try{
-        const students = await Student.find({}, "fullName");
+        const students = await Student.find({}, "fullName email");
         res.json(students)
 
     }catch(error){
